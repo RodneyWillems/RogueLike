@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerMovementBase))]
 public class Adventurer : MonoBehaviour
 {
     [SerializeField] private float runSpeed = 40f; // Movement speed.
@@ -10,7 +10,7 @@ public class Adventurer : MonoBehaviour
     private int jumps = 0;
 
 
-    private PlayerMovement character;
+    private PlayerMovementBase character;
     private AttackController attack;
     private Animator animator;
 
@@ -23,7 +23,7 @@ public class Adventurer : MonoBehaviour
 
     private void Awake()
     {
-        character = GetComponent<PlayerMovement>();
+        character = GetComponent<PlayerMovementBase>();
         attack = GetComponent<AttackController>();
         animator = GetComponent<Animator>();
 
